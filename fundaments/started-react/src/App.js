@@ -4,9 +4,26 @@ import React from 'react';
 //formas  de criar componete react
 
 
-function AppFuncional() {
+function AppFuncional(props) {
+
+  const createComboBox = () => {
+
+    const options = ["one", "two", "three", "four"];
+    const comboBox = options.map(option => <option>{option}</option>);
+
+    return (
+      <select>
+        {comboBox}
+      </select>
+    )
+  }
+
   return (
-    <h1>My name is Renan moura</h1>
+    <>
+    <h1>compomente funcional</h1>
+    <input type="text" value={props.name}/>
+    {createComboBox()}
+    </>
   );
 }
 
@@ -56,4 +73,7 @@ class App extends React.Component {
   }
 }
 
-export default App;
+//export default App;
+
+export default AppFuncional;
+
