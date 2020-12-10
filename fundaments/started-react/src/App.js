@@ -20,8 +20,8 @@ function AppFuncional(props) {
 
   return (
     <>
-    <h1>compomente funcional</h1>
-    <input type="text" value={props.name}/>
+    <h1 className="text-centralizado">compomente funcional</h1>
+    <input className="text-centralizado" type="text" value={props.name}/>
     {createComboBox()}
     </>
   );
