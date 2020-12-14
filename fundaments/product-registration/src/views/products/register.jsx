@@ -48,7 +48,6 @@ export default class RegisterProduct extends React.Component {
             this.setState({ success: true })
         } catch (error) {
             const wrong = error.errors
-            console.log("erro: " + wrong);
             this.setState({ errors: wrong })
         }
 
@@ -56,7 +55,7 @@ export default class RegisterProduct extends React.Component {
     }
 
     render() {
-        console.log("errors: ", this.state.errors)
+        
         return (
             <>
                 <div className="card">
