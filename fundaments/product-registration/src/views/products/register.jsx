@@ -48,14 +48,15 @@ export default class RegisterProduct extends React.Component {
             this.setState({ success: true })
         } catch (error) {
             const wrong = error.errors
-            this.setState({errors:wrong})
+            console.log("erro: " + wrong);
+            this.setState({ errors: wrong })
         }
 
 
     }
 
     render() {
-        console.log()
+        console.log("errors: ", this.state.errors)
         return (
             <>
                 <div className="card">
@@ -68,12 +69,12 @@ export default class RegisterProduct extends React.Component {
                                 <strong>Well done!</strong> successfully <a href="#" class="alert-link"></a>.
                             </div>
                         }
-                        {this.state.errors > 0 &&
+                        {this.state.errors.length > 0 &&
 
                             this.state.errors.map(msg => {
                                 return (<div class="alert alert-dismissible alert-danger">
                                     <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong>error!</strong>{msg}
+                                    <strong>wrong!</strong> {msg} <a href="#" class="alert-link"></a>.
                                 </div>)
                             })
 

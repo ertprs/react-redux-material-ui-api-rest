@@ -1,7 +1,7 @@
 const PRODUCTS = "_PRODUCTS"
 
 
-export function errorsValidade(errors) {
+export function ErrorValidade(errors) {
   this.errors = errors;
 }
 
@@ -15,14 +15,14 @@ export default class ProductService {
     }
     if (!product.sku) {
       errors.push("the sku fild is requered")
-    } if (!product.price || (product.price <= 0) && Number.isInteger(product.price)) {
+    } if (!product.price || (product.price <= 0)) {
       errors.push("the price fild is invalid")
     } if (!product.provider) {
       errors.push("the provider fild is requered!")
     }
-
+    console.log("lista de erros: "+errors);
     if (errors.length > 0) {
-      throw new errorsValidade(errors)
+      throw new ErrorValidade(errors)
     }
 
   }
