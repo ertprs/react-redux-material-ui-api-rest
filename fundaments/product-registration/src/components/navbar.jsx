@@ -20,26 +20,19 @@ function Navbar() {
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
 
-                        <Link  className="nav-link" >Home<span className="sr-only">(current)</span>
-                        </Link>
-                        
+                        <Link className="nav-link" >Home<span className="sr-only">(current)</span> </Link>
+
                     </li>
                     <li className="nav-item">
                         <Link to="/register-products" className="nav-link" href="#">register</Link>
                     </li>
+
                     <li className="nav-item">
                         <Link to="/query" className="nav-link" href="#">query</Link>
                     </li>
 
-                    <li className="nav-item dropdown">
-                        <Link className="nav-link dropdown-toggle"
-                            data-toggle="dropdown"
-                            href="#"
-                            role="button"
-                            aria-haspopup="true"
-                            aria-expanded="false">Dropdown
-                        </Link>                     
-                    </li>
+                
+
                 </ul>
             </div>
         </nav>
