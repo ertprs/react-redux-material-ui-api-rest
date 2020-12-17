@@ -1,9 +1,22 @@
-import { render } from '@testing-library/react'
 import React from 'react'
+import ProductService from '../../app/productService'
 
 export default class Query extends React.Component {
+
     state = {
         products: []
+    }
+
+    constructor() {
+        super()
+        this.service = new ProductService()
+    }
+
+    componentDidMount() {
+        const allProducts = this.service.getProducts();
+        console.log("todos os produots: "+ allProducts)
+        this.setState({ products: allProducts })
+
     }
 
     render() {
@@ -24,17 +37,19 @@ export default class Query extends React.Component {
                     </thead>
                     <tbody>
                         {
-                            this.state.products.map(product => {
-                                return
-                                <tr>
-                                    <th>product.name</th>
-                                    <th>product.sku</th>
-                                    <th>product.price</th>
-                                    <th>product.provider</th>
-                                    <th></th>
-                                </tr>
+                           this.state.products.map((product, index) => {
+                                return (
+                                    <tr key={index}>
+                                        <th>{product.name}</th>
+                                        <th>{product.sku}</th>
+                                        <th>{product.price}</th>
+                                        <th>{product.provider}</th>
+                                        <th></th>
+                                    </tr>
+                                )
                             })
                         }
+                        
                     </tbody>
 
                 </table>

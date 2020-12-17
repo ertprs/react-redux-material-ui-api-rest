@@ -42,4 +42,11 @@ export default class ProductService {
     products.push(product)
     localStorage.setItem(PRODUCTS, JSON.stringify(products))
   }
+
+  getProducts = () =>{ 
+    const get = localStorage.getItem(PRODUCTS)
+    console.log("get: "+ get)
+
+   return JSON.parse(get)
+  }
 }
