@@ -31,7 +31,15 @@ function Navbar() {
                         <Link to="/query" className="nav-link" href="#">query</Link>
                     </li>
 
-                
+                    <li className="nav-item dropdown">
+                        <Link className="nav-link dropdown-toggle"
+                            data-toggle="dropdown"
+                            href="#"
+                            role="button"
+                            aria-haspopup="true"
+                            aria-expanded="false">Dropdown
+                        </Link>
+                    </li>
 
                 </ul>
             </div>

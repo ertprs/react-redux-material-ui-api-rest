@@ -13,9 +13,8 @@ export default () => {
 
         <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/register-products" component={RegisterProduct} />
+            <Route exact path="/register-products/:sku?" component={RegisterProduct} />
             <Route exact path="/query" component={Query} />
-
         </Switch>
 
     );
